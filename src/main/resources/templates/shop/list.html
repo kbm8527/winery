@@ -1,0 +1,281 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layout/layoutShop.html">
+
+		<!-- 硫붿씤 �쁺�뿭 -->
+            <main layout:fragment="content" class="l_main">
+                <section class="t_banner" style="background-image: url('/winery/img/half.png');" > 
+                    <div class="container">
+                        <div class="home_banner_inner">
+                            <h2>Welcome To</h2> <br>
+                            <h2>Winery Tour</h2>
+                        </div>
+                    </div>
+                </section>
+                <section class="t_intro">
+                    <div class="l_container">
+                        <nav class="breadcrumbs">
+                            <ul class="breadcrumbs_list">
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">Home</a>
+                                </li>
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">[]</a>
+                                </li>
+                                <li class="breadcrumbs_item">
+                                    <a class="breadcrumbs_link" href="#">HALF-TOURS</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <br>
+                        <div class="t_grid">
+                            <div>
+                                <h1 class="heading1">Winery Tours</h1>
+                                <div>
+                                    <p>Go off-grid and discover the joys of spontaneous, independent campervan touring! Our 25 day New Zealand Motorhome itinerary transports you to scenic wonders you can only imagine: forest-fringed white sand beaches, eerie volcanic landscapes, icy glacial wonderlands and caves of glittering glow worms. Flexible, budget-friendly and perfect for adventure-loving familie</p>
+                                    <br>
+                                    <p>Go off-grid and discover the joys of spontaneous, independent campervan touring! Our 25 day New Zealand Motorhome itinerary transports you to scenic wonders you can only imagine: forest-fringed white sand beaches, eerie volcanic landscapes, icy glacial wonderlands and caves of glittering glow worms. Flexible, budget-friendly and perfect for adventure-loving familie</p>
+                                    <br>
+                                    <p>Go off-grid and discover the joys of spontaneous, independent campervan touring! Our 25 day New Zealand Motorhome itinerary transports you to scenic wonders you can only imagine: forest-fringed white sand beaches, eerie volcanic landscapes, icy glacial wonderlands and caves of glittering glow worms. Flexible, budget-friendly and perfect for adventure-loving familie</p>
+                                </div>    
+                            </div>
+                        
+                            <div class="li">
+                                <h4 class="heading4">
+                                    What's include on every tour?
+                                </h4>
+                                <div>
+                                    <ul>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                        <li>Transport in a comfortable 10-seater bus</li>
+                                    </ul>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- �닾�뼱 由ъ뒪�듃-->
+               	
+                    <div  nami="i" class="tour_list">
+                        <div class="l_container">
+                            <div class="tl_header">
+                                <h2 class="heading2">Our Adventure Tour</h2>
+                            </div>
+                            <div class="tl_grid" >
+                                <div class="tcard" th:each="item:${items}" th:if="${item.cate1} == 1">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img th:src="@{/img/half.png}" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- �뒳�씪�씠�뱶 �씠誘몄�1 -->
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img th:src="@{/img/full.png}" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- �뒳�씪�씠�뱶 �씠誘몄�2 -->
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img th:src="@{/img/private.png}" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                        <!-- �뒳�씪�씠�뱶 �씠誘몄�3 -->
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="tc_content">
+                                    <h3 class="heading3">[[${item.name}]]</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>[[${#numbers.formatInteger(item.price, 3, 'COMMA')}]]</span>
+                                        	원
+                                    </div>
+                                    <div>
+                                        <nav>
+                                        
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                       [[${item.descript}]]
+
+                                    </p>
+                                    <a class="t_button" href="view">View Tour</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div>
+                            
+                           
+                           <!--     <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/half.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/full.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                       
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/private.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                      
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="tc_content">
+                                    <h3 class="heading3">Half-Day Tour</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        �썝
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating M훮ori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View Tour</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div>
+                                <div class="tcard">
+                                    <div class="tcard_image">
+                                        <div class="thumbnail_gallery">
+                                            <div class="tg_wrapper">
+                                                <div class="tg swiper">
+                                                    <div class="swiper_wrapper">
+
+                                                        <div class="swiper_slide swiper_slide" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/half.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                      
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/full.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                      
+                                                        <div class="swiper_slide swiper_slide-next" style="width: 373px;">
+                                                            <a href="#">
+                                                                <span class="img_wrapper l_img_wrapper" style="color:transparent; display: inline-block;">
+                                                                    <img src="/winery/img/private.png" alt="Half-Day">
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    
+                                                    
+                                                    </div>    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <div class="tc_content">
+                                    <h3 class="heading3">Half-Day Tour</h3>
+                                    <div class="tc_price">
+                                        price from
+                                        <span>50000</span>
+                                        �썝
+                                    </div>
+                                    <div>
+                                        <nav>
+                                            <h5 class="rating star4">...</h5>
+                                            <span>4.7</span>
+                                        </nav>
+                                    </div>
+                                    <p class="tc_description">
+                                        Enjoy adventure activities, incredible scenery and fascinating M훮ori culture as we show you the highlights between Auckland to Wellington.
+
+
+                                    </p>
+                                    <a class="t_button" href="view">View Tour</a>
+                                    <span></span>
+                                </div>
+
+
+                                
+                            
+                            
+                                </div> -->
+                           
+                           
+                           
+                           
+                           
+                           
+                            </div>        
+                            
+                        </div>
+                    </div>                                
+          
+                </main>
+            <!--�뫖�꽣 �쁺�뿭-->
+         
+</html>
